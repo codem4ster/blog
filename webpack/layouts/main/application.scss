@@ -1,0 +1,204 @@
+$blue:    #197ce6;
+$indigo:  #6e2bda;
+$purple:  #765ba9;
+$pink:    #d35590;
+$red:     #c44f5b;
+$orange:  #e5812e;
+$yellow:  #ce8346;
+$green:   #3e9352;
+$teal:    #37b38e;
+$cyan:    #2c95a5;
+
+$font_size: 13px;
+
+@import "~bootstrap/scss/bootstrap";
+
+html {
+  font-size: $font-size - 1px;
+  @include media-breakpoint-only(sm) {
+    font-size: $font-size;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $font-size +1 ;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $font-size + 2px;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $font-size + 2px;
+  }
+  height: 100%;
+}
+
+/**
+ * Fix fonts that render as bold in Firefox
+ *
+ * Put this near the top of your style.css
+ * Before any overriding styles
+ */
+
+html {
+
+}
+
+body {
+  font-family: "Mukta Mahee", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+}
+header{
+  flex-shrink: 0;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Muli", "Helvetica Neue", sans-serif;
+  a {
+    text-decoration: inherit;
+    color: inherit;
+    &:hover {
+      text-decoration: inherit;
+      color: inherit;
+    }
+  }
+}
+
+
+.custom-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+header nav {
+  background-color: #fbffff;
+  img {
+    width: 4.5rem;
+    transition: width .5s;
+  }
+}
+
+#search-form {
+  max-width: 768px;
+  transition: margin .5s;
+  .input-group {
+    box-shadow: 0px 2px 2px -3px grey;
+  }
+}
+
+header {
+  z-index: 100;
+}
+
+#search-wrapper {
+  background-color: rgb(233, 233, 233);
+  box-shadow: 0px 2px 5px -3px grey;
+  .ico-search {
+    border: 1px solid lightgray;
+    background-color: #f6f6f6;
+    color: #9c3b3a;
+    &:hover {
+      background-color: #6c757d;
+      color: #fff;
+    }
+  }
+}
+
+
+a {
+  color: #2a7e96;
+  &:hover {
+    color: #1e5a6b;
+  }
+}
+.nav-item>a:not(.disabled,.btn):hover {
+  text-decoration: underline !important;
+}
+
+footer {
+  background: #16547d;
+  background: radial-gradient(ellipse at center, #124669 0%,#163853 100%);
+  color: #fff;
+  a {
+    color: #aee0ed;
+    &:hover {
+      color: #d2edf5;
+    }
+  }
+  .seperate {
+    border-bottom: 1px dashed #3d5861;
+    padding-bottom: 1rem;
+  }
+  .bottom-info {
+    color: #bbc5d0;
+  }
+  .linkgroup {
+    ul, li { margin:0; padding: 0; list-style: none; }
+    h5 {
+      margin: 1rem 0 .5rem 0;
+    }
+    h5, li {
+      @include media-breakpoint-only(sm) {
+        text-align: center;
+      }
+    }
+  }
+  .right-pane {
+    margin-top: 1rem;
+    color: #000;
+    box-shadow: 0px 2px 10px -4px #000000;
+    a {
+      color: #2a7e96;
+      &:hover {
+        color: #1e5a6b;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      margin-top: 1.5rem;
+    }
+  }
+  .card-header {
+    color: #7d2f2e;
+  }
+}
+
+#breadcrumbs {
+  background: #fff;
+  ol {
+    background: #fff;
+    margin: 0;
+  }
+  z-index: 50;
+  box-shadow: 0px 2px 5px -3px grey;
+  position: relative;
+}
+
+.open-handle {
+  position: absolute;
+  border: 1px solid lightgray;
+  border-top-right-radius: 30%;
+  border-bottom-right-radius: 30%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 2.5px -1px rgba(20, 64, 96, 0.51);
+  cursor: pointer;
+  top: 3.5rem;
+  background: #fff;
+  @include media-breakpoint-up(md) {
+    display: none !important;
+  }
+}
+

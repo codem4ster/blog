@@ -29,7 +29,28 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+gem 'active_interaction'
+gem 'wisper'
+gem 'mini_magick'
+
+# cron jobs
+gem 'sidekiq'
+# scheduler
+gem 'sidekiq-scheduler'
+# elastic search
+gem 'elasticsearch-model'
+gem 'elasticsearch-persistence'
+gem 'elasticsearch-rails'
+gem 'fabrication'
+gem 'faker'
+# for breadcrumbs
+gem 'gretel', github: 'mickro/gretel'
+
+gem 'jsonb_accessor'
+gem 'simple_form'
+gem 'redis'
+gem 'redis-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -40,6 +61,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rubocop'
 end
 
 group :development do

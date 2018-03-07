@@ -1,0 +1,13 @@
+@import "../../../components/bs_methods";
+
+#activate {
+  background: #fbfbfb;
+  .ico-ok-circled2 {
+    font-size: 2rem;
+    color: $green;
+  }
+  .ico-cancel-circled2 {
+    font-size: 2rem;
+    color: $red;
+  }
+}
