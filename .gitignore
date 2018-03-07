@@ -13,6 +13,9 @@
 !/log/.keep
 !/tmp/.keep
 /.idea/
+/shared/
+/webpack/node_modules/
+/public/dist/
 
 /node_modules
 /yarn-error.log
