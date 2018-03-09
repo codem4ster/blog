@@ -10,18 +10,21 @@ module Blog
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-    config.autoload_paths << Rails.root.join('app', 'classes')
+    config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('app', 'interactions')
     config.autoload_paths << Rails.root.join('app', 'validators')
     config.autoload_paths << Rails.root.join('app', 'inputs')
     config.autoload_paths << Rails.root.join('app', 'events')
     locale_path = Rails.root.join('config', 'locales', '**', '*.{rb,yml}')
     config.i18n.load_path += Dir[locale_path.to_s]
+    config.i18n.available_locales = %i[tr]
+    config.i18n.default_locale = :tr
+    config.i18n.load_path += Dir[locale_path.to_s]
     config.active_job.queue_adapter = :sidekiq
 
     servers = [
       {
-        host: 'localhost',
+        host: '127.0.0.1',
         port: 6379,
         db: 6,
         # password: '*******',

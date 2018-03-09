@@ -1,0 +1,9 @@
+tr:
+  user:
+    register_successfull: Üyelik kaydınız alınmıştır. Lütfen size gönderilen e-posta'daki aktivasyon linkine tıklayınız.
+  routes:
+    users: kullanici
+    new: yeni
+    edit: duzenle
+    entrance: giris
+    login: gir
