@@ -5,7 +5,7 @@ module Operations
 
     def execute
       image = generator.generate
-      { image: image, hash: generator.text }
+      { image: image, hash: generator.hash }
     end
 
     private

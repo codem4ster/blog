@@ -10,23 +10,18 @@ module Forms
       validates :captcha, captcha: true
 
       def execute
-        if site_user.save
-          broadcast(:site_user_registered, site_user)
+        if user.save
+          # broadcast(:user_registered, user)
         else
-          errors.merge!(site_user.errors)
+          errors.merge!(user.errors)
         end
-        self
-      end
-
-      def to_model
         self
       end
 
       private
 
-      def site_user
-        @site_user ||= SiteUser.new username: username, password: password,
-                                    email: email
+      def user
+        @user ||= ::User.new username: username, password: password, email: email
       end
     end
   end

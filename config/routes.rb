@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   localized do
     root to: 'site#home'
 
-    resources :users
     namespace 'users' do
       get 'entrance'
       post 'login'
       get 'registration'
       post 'register'
     end
+    resources :users
   end
   get 'captcha', to: 'application#captcha'
   mount Sidekiq::Web => '/sidekiq'

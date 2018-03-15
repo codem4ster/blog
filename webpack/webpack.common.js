@@ -15,10 +15,7 @@ module.exports = {
     },
     entry: {
         'layouts/main/application': 'main/application.coffee',
-        'pages/user/login': 'user/login/login.coffee',
-        'pages/user/new': 'user/new/new.coffee',
-        'pages/user/activate': 'user/activate/activate.coffee',
-        'pages/user/password_lost': 'user/password_lost/password_lost.coffee',
+        'pages/users/registration': 'users/registration/registration.coffee',
         'pages/home': 'home/home.coffee',
     },
     output: {

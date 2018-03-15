@@ -59,7 +59,7 @@ SimpleForm.setup do |config|
       end
       ig.wrapper tag: 'div', class: 'input-group-append border refresh' do |rf|
         rf.use :captcha_refresh
-        end
+      end
       ig.use :input, **input_options, class: 'form-control'
       error_and_hint.call ig
     end

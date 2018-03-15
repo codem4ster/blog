@@ -60,9 +60,9 @@ class UsersController < ApplicationController
   end
 
   def register
-    outcome = Forms::User::Register.run(params[:forms_register_user])
-    if outcome.valid?
-      flash[:success] = t('user.register_successfull')
+    @user_register_form = Forms::User::Register.run(params[:forms_user_register])
+    if @user_register_form.valid?
+      flash[:success] = t('user.register_successful')
       redirect_to users_login_tr_path
     else
       render :registration

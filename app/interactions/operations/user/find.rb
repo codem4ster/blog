@@ -1,4 +1,4 @@
-module Forms
+module Operations
   module User
     class Find < ActiveInteraction::Base
     end

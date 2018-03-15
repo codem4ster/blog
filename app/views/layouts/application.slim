@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
+    title Blog
+    = csrf_meta_tags
+    link href="#{webpack_asset('layouts/main/application.css')}" rel="stylesheet" /
+    == webpack_page_css_tag
+  body
+    = yield
+    script src="#{webpack_asset('vendor.js')}"
+    script src="#{webpack_asset('layouts/main/application.js')}"
+    == webpack_page_js_tag

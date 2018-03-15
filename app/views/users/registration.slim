@@ -1,0 +1,7 @@
+= simple_form_for @user_register_form, url: path(:users_register) do |form|
+  = form.input :username
+  = form.input :email
+  = form.input :password
+  = form.input :password_confirmation
+  = form.input :captcha, as: :captcha
+  = form.submit value: 'Gönder'

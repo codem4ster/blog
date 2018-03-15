@@ -1,9 +1,43 @@
 tr:
+  active_interaction:
+    errors:
+      messages:
+        missing: boş olamaz
+        oauth_login_fail: Giriş işlemi başarısız. Lütfen e-Devlet çağrı merkezinden hata talebi oluşturunuz.
+    attributes:
+      forms/user/register:
+        username: Kullanıcı adı
+        password: Şifre
+        email: E-Posta
+        password_confirmation: Şifre (Tekrar)
+        captcha: Güvenlik kodu
+  errors:
+    messages:
+      blank: boş olamaz
+      empty: boş olamaz
+      taken: daha önce alınmış
+  activerecord:
+    models:
+      user:
+        one: Kullanıcı
+        other: Kullanıcılar
   user:
-    register_successfull: Üyelik kaydınız alınmıştır. Lütfen size gönderilen e-posta'daki aktivasyon linkine tıklayınız.
+    register_successful: Üyelik kaydınız alınmıştır. Lütfen size gönderilen e-posta'daki aktivasyon linkine tıklayınız.
   routes:
     users: kullanici
     new: yeni
     edit: duzenle
     entrance: giris
     login: gir
+    registration: kayit
+    register: kaydol
+  simple_form:
+    "yes": 'Evet'
+    "no": 'Hayır'
+    required:
+      text: 'Zorunlu Alan'
+      mark: '*'
+    error_notification:
+      default_message: "Lütfen aşağıdaki hataları düzeltin:"
+      captcha: 'kodu hatalı girdiniz'
+      email: 'geçerli bir e-posta değil'

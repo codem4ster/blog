@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def make_session_global
-    # Session.init(session)
+    Session.init(session)
   end
 
   def current_user

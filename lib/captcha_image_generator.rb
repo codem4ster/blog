@@ -1,7 +1,7 @@
 require 'vips'
 
 class CaptchaImageGenerator
-  attr_accessor :text
+  attr_accessor :hash
   INPUTS = %w[OLAY İYİCE KARIŞIK ALMIŞTI OLAYI BÜRO TAKİP OLAYA KARIŞAN TEŞHİS
               EDİLİP ŞUBEYE GÖTÜREN ARAÇ ARABA ŞANS ESERİ HENÜZ HURDAYA POLİS
               OTOPARK BİLGİ SONRA HEMEN ARACI BAŞLADI ARABADA KALAN KAÇIRAN
@@ -38,9 +38,9 @@ class CaptchaImageGenerator
   end
 
   def generate
-    @text = INPUTS.sample
+    @hash = INPUTS.sample
     final = background.composite text, :over
-    final.write_to_buffer
+    final.write_to_buffer ".jpg", Q: 90
   end
 
   def wobble(image)
@@ -70,11 +70,11 @@ class CaptchaImageGenerator
   def text
     text_layer = Vips::Image.black 1, 1
     x_position = 0
-    char_width = @width.to_f / @text.length
+    char_width = @width.to_f / @hash.length
     char_height = @height
     width_offset = (char_width * 0.1).round
     height_offset = (char_height * 0.1).round
-    @text.each_char do |c|
+    @hash.each_char do |c|
       letter = Vips::Image.text c, width: char_width - width_offset*2,
                                 height: char_height - height_offset*2
       # random scale and rotate
